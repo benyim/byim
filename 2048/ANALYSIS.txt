@@ -1,0 +1,53 @@
+BACKGROUND:
+
+Note the complexity of the operation DenseBoard.addTileAtFreeSpace():
+
+  // TARGET COMPLEXITY: O(T + L)
+  // T: the number of non-empty tiles in the board
+  // L: the value of parameter freeL
+  public void addTileAtFreeSpace(int freeL, Tile tile);
+
+This approach may seem a little strange.  It works in conjunction with
+methods of Game2048 to generate a random location and tile then set
+the random location to the provided tile using the method
+above. Below is the approach you must implement.
+
+REQUIRED IMPLEMENTATION
+- The Game asks the Board how many free spaces F it has left
+- The Game generates a random number called L from 0 to F-1 for the
+  location of a new tile
+- The Game generates a random tile called X
+- The Game uses the method addTileAtFreeSpace(L,X) to place the new
+  tile on the board
+
+An ALTERNATIVE APPROACH would be the following
+- The Game asks the Board to generate a list of its free spaces as 2D
+  coordinates, such as [(0,1), (1,1), (2,3), (4,1)]
+- The Game picks a random coordinate (I,J) from the list
+- The Game generates a random tile called X
+- The Game uses a new method of Board to set the tile at position
+  (I,J) to be X
+
+QUESTIONS:
+
+Use the following notation in your answer.
+- R, C: the number of rows and columns of the Board
+- I, J: the position where the new tile should be placed
+- L: same as above, the linear location of among free spaces for the
+  new tile
+
+GIVE A BIG-O ESTIMATE OF THE RUNTIME COMPLEXITY OF THE ALTERNATIVE
+APPROACH IN YOUR ANSWER. 
+
+IS THIS ALTERNATIVE APPROACH FASTER, SLOWER, OR THE SAME IN TERMS OF
+BIG-O COMPLEXITY THAN THE REQUIRED IMPLEMENTATION? 
+
+IS THIS ALTERNATIVE APPROACH FASTER, SLOWER, OR THE SAME IN TERMS OF
+PRACTICAL PERFORMANCE THAN THE REQUIRED IMPLEMENTATION? 
+
+YOUR ANSWER HERE:
+1. O(R+C)
+2. The same
+3. Slower
+
+
